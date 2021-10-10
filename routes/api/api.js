@@ -1,14 +1,14 @@
 const router = require("express").Router();
-const Workout = require("../../model/workouts.js");
+const express = require('express');
+const db = require('../../model')
 
-router.post("/workouts", async ({ body }, res) => {
-  Workout.create(body)
-    .then(dbworkouts => {
-      res.json(dbworkouts);
-    })
-    .catch(err => {
-      res.status(400).json(err);
-    });
+router.post("/", ({body}, res) => {
+  db.Workout.create(body)
+  .then(dbWorkout => {
+    res.json(dbWorkout);
+  }).catch(err => {
+    res.json(err);
+  });
 });
 
 // router.get("/api/workouts/" + id, ({ body }, res) => {
