@@ -50,16 +50,7 @@ router.put("/:id", ({ body, params }, res) => {
     });
 });
 
-// router.get("/api/workouts", (req, res) => {
-//   Workout.find({})
-//     .sort({ date: -1 })
-//     .then(dbworkouts => {
-//       res.json(dbworkouts);
-//     })
-//     .catch(err => {
-//       res.status(400).json(err);
-//     });
-// });
+
 
 module.exports = router;
 
